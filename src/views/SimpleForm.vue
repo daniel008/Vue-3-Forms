@@ -15,39 +15,32 @@
 
       <h3>Name & describe your event</h3>
 
-      <label>Title</label>
-      <input
+      <BaseInput
         v-model="event.title"
+        label="Title"
         type="text"
-        placeholder="Title"
-        class="field"
-      >
-
-      <label>Description</label>
-      <input
+      />
+      <BaseInput
         v-model="event.description"
+        label="Description"
         type="text"
-        placeholder="Description"
-        class="field"
       />
 
       <h3>Where is your event?</h3>
 
-      <label>Location</label>
-      <input
+      <BaseInput
         v-model="event.location"
+        label="Location"
         type="text"
-        placeholder="Location"
-        class="field"
       />
 
       <h3>Are pets allowed?</h3>
       <div>
         <input
-            type="radio"
-            v-model="event.pets"
-            :value="1"
-            name="pets"
+          type="radio"
+          v-model="event.pets"
+          :value="1"
+          name="pets"
           />
         <label>Yes</label>
       </div>
@@ -87,6 +80,7 @@
 </template>
 
 <script>
+import BaseInput from '@/components/BaseInput.vue'
 export default {
   data () {
     return {
@@ -111,6 +105,7 @@ export default {
         }
       }
     }
-  }
+  },
+  components: { BaseInput }
 }
 </script>
